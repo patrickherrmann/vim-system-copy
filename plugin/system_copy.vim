@@ -122,27 +122,9 @@ xnoremap <silent> <Plug>SystemPaste :<C-U>call <SID>system_paste(visualmode(),vi
 nnoremap <silent> <Plug>SystemPaste :<C-U>set opfunc=<SID>system_paste<CR>g@
 nnoremap <silent> <Plug>SystemPasteLine :<C-U>call <SID>system_paste_line()<CR>
 
-if !hasmapto('<Plug>SystemCopy', 'n') || maparg('cp', 'n') ==# ''
-  nmap cp <Plug>SystemCopy
-endif
-
-if !hasmapto('<Plug>SystemCopy', 'v') || maparg('cp', 'v') ==# ''
-  xmap cp <Plug>SystemCopy
-endif
-
-if !hasmapto('<Plug>SystemCopyLine', 'n') || maparg('cP', 'n') ==# ''
-  nmap cP <Plug>SystemCopyLine
-endif
-
-if !hasmapto('<Plug>SystemPaste', 'n') || maparg('cv', 'n') ==# ''
-  nmap cv <Plug>SystemPaste
-endif
-
-if !hasmapto('<Plug>SystemPaste', 'v') || maparg('cv', 'v') ==# ''
-  xmap cv <Plug>SystemPaste
-endif
-
-if !hasmapto('<Plug>SystemPasteLine', 'n') || maparg('cV', 'n') ==# ''
-  nmap cV <Plug>SystemPasteLine
-endif
-" vim:ts=2:sw=2:sts=2
+nmap gy <Plug>SystemCopy
+xmap gy <Plug>SystemCopy
+nmap gyy <Plug>SystemCopyLine
+nmap gp <Plug>SystemPaste
+xmap gp <Plug>SystemPaste
+nmap gpp <Plug>SystemPasteLine
